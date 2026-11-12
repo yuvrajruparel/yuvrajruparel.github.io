@@ -24,7 +24,7 @@ export function ProjectCard({ project, onOpenModal }: Props) {
           <h3 className="text-[16px] font-bold leading-snug">{project.title}</h3>
           <span className="whitespace-nowrap text-[13px] text-muted-foreground">{project.date}</span>
         </div>
-        <p className="mt-2 text-[14px] leading-[1.55] text-foreground/85">{project.description}</p>
+        <p className="mt-2 text-justify-body text-[14px] leading-[1.55] text-foreground/85">{project.description}</p>
         <div className="mt-auto flex flex-wrap gap-2 pt-4">
           {project.links.map((link) => {
             if (link.kind === "view") {

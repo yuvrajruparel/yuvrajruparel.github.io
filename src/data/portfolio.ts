@@ -5,7 +5,7 @@ export const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replac
 
 export const profile = {
   name: "Yuvraj Ruparel",
-  bioLines: ["Mechanical Engineering", "Undergrad", "Duke University", "Durham, NC"],
+  bioLines: ["Mechanical Engineering", "Undergraduate", "Duke University", "Durham, NC"],
   headshot: "photos/headshot.png",
 };
 
@@ -20,19 +20,22 @@ export const about: TextPart[][] = [
   ],
   [
     {
-      text: "I'm most interested in robotics and mechatronics, where mechanical design, electronics and software have to work together. I like building hardware that actually runs: designing the parts, wiring the electronics and writing the code that controls them.",
+      text: "I'm most interested in robotics and mechatronics, where mechanical design, electronics and software have to work together. I like building hardware that actually runs: designing the parts, wiring the electronics and writing the code that controls them. I am working on a few robotics and mechatronics related personal projects outside of classes.",
     },
   ],
   [
     {
-      text: "Outside engineering, I play cricket, table tennis, basketball and swimming, and I like watching movies and listening to music. I also speedcube. I'm a WCA (World Cube Association) certified speedcuber and can solve every listed event, from 2x2x2 up to 7x7x7 and puzzles like the Pyraminx, Megaminx, Square-1, Skewb and Clock. I've solved a ",
+      text: "Outside engineering, I play cricket, table tennis and basketball, I swim, and I like watching movies and listening to music.",
+    },
+  ],
+  [
+    {
+      text: "I'm a WCA (World Cube Association) certified speedcuber and can solve every listed WCA event, from 2x2x2 to 7x7x7 plus the Pyraminx, Megaminx, Square-1, Skewb and Clock. I've also solved a Gigaminx (5x5 Megaminx) and a ",
     },
     { text: "17x17x17", viewKey: "cube-17x17x17" },
-    {
-      text: " online (about 9,000 moves, since buying one costs too much) and a Gigaminx (5x5 Megaminx). I also wrote a ",
-    },
+    { text: " online (about 9,000 moves, since buying one costs too much). I wrote a " },
     { text: "cubing guide", viewKey: "cubing-guide" },
-    { text: " that shows the simplest method I know for solving each puzzle." },
+    { text: " (click to view) with the simplest method I know for each puzzle." },
   ],
 ];
 
@@ -43,7 +46,7 @@ export type ContactItem = {
   viewKey?: string;
 };
 
-// Order fills the 2 x 2 grid left to right: email top-left.
+// Shown in one row, left to right: email first.
 export const contacts: ContactItem[] = [
   { icon: "mail", label: "yuvraj.ruparel@duke.edu", href: "mailto:yuvraj.ruparel@duke.edu" },
   { icon: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/yuvraj-ruparel-a140933a0/" },
@@ -65,6 +68,7 @@ export type Project = {
   links: ProjectLink[];
 };
 
+// Display order, newest first. Adding a project at the top pushes the rest one place later in the grid.
 export const projects: Project[] = [
   {
     title: "Spiderbot Mark I",
@@ -80,11 +84,11 @@ export const projects: Project[] = [
   },
   {
     title: "Sensor PCB for Duke Robotics Club",
-    date: "01/2026 - Present",
+    date: "02/2026 - Present",
     image: "photos/sensor-pcb.png",
     fit: "contain",
     description:
-      "A custom KiCad board for the club's two underwater robots, Oogway and Crush, used in RoboSub. It combines voltage, temperature-humidity and pressure sensors, a 5.5 V to 3.3 V I2C level shifter and an Arduino Nano for real-time data logging.",
+      "A custom KiCad board for the club's underwater robot, Crush, used in RoboSub. It combines voltage, temperature-humidity and pressure sensors, a 5.5 V to 3.3 V I2C level shifter and an Arduino Nano for real-time data logging.",
     links: [{ kind: "view", label: "See the report", viewKey: "sensor-pcb-report" }],
   },
   {
@@ -105,7 +109,7 @@ export const projects: Project[] = [
   },
   {
     title: "ISS De-orbit Simulator",
-    date: "11/2025 - 12/2025",
+    date: "09/2025 - 12/2025",
     image: "photos/iss-deorbit.png",
     fit: "contain",
     description:
@@ -128,7 +132,7 @@ export const projects: Project[] = [
     links: [
       {
         kind: "external",
-        label: "Read the paper",
+        label: "Published research paper",
         href: "https://pubs.sciepub.com/wjee/9/1/1/index.html#RNfigures",
       },
       { kind: "view", label: "See the presentation", viewKey: "waste-presentation" },
@@ -152,7 +156,7 @@ export const upcoming = [
   {
     title: "Prowler",
     description:
-      "A drone controlled from a phone, built around a single custom PCB. It will use an MPU6050 IMU for stabilization, motor and ESC control, and a 3D-printed frame.",
+      "A drone controlled from a phone app, built around a single custom PCB. It will use an MPU6050 IMU for stabilization, motor and ESC control, a live camera feed, and a 3D-printed PLA frame.",
   },
   {
     title: "Spiderbot Mark II",
@@ -177,10 +181,10 @@ export const experience: Experience[] = [
     title: "PCB Designer, Electricals",
     org: "Duke Robotics Club",
     logo: "logos/logo-duke-robotics.jpeg",
-    date: "01/2026 - Present",
+    date: "02/2026 - Present",
     bullets: [
       "Designed a KiCad PCB that combines a custom voltage sensor, a temperature-humidity sensor and an I2C pressure sensor with a 5.5 V to 3.3 V bidirectional level shifter, plus an Arduino Nano for real-time data logging.",
-      "Integrated the board into the club's two autonomous underwater robots, Oogway and Crush, for RoboSub.",
+      "Integrated the board into the club's autonomous underwater robot, Crush, for RoboSub.",
     ],
   },
   {
@@ -242,14 +246,17 @@ export const awards = [
 export const skills = [
   {
     title: "CAD and Manufacturing",
+    count: "6 tools",
     items: ["SolidWorks", "Autodesk Fusion", "Onshape", "CNC milling (QuickCAM Pro)", "FDM printing", "SLS printing"],
   },
   {
     title: "Simulation and Analysis",
+    count: "3 tools",
     items: ["FEA and CFD (Ansys Discovery)", "MuJoCo", "Wind tunnel testing"],
   },
   {
     title: "Electronics",
+    count: "6 tools",
     items: [
       "PCB design (KiCad)",
       "I2C level shifting",
@@ -259,13 +266,15 @@ export const skills = [
       "Motor and ESC control",
     ],
   },
-  { title: "Programming", items: ["Python", "C++", "Reinforcement learning", "Git"] },
+  { title: "Programming", count: "4 skills", items: ["Python", "C++", "Reinforcement learning", "Git"] },
   {
     title: "Leadership",
+    count: "2 roles",
     items: ["Led F1 in Schools team (World Finals, Singapore)", "Student Council Member (ABWA)"],
   },
   {
     title: "Languages Spoken",
+    count: "6 languages",
     items: ["English", "Spanish", "Hindi", "Gujarati", "Marathi", "Kutchi"],
   },
 ];

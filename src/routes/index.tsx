@@ -57,13 +57,13 @@ function Home() {
         <div className="max-w-[900px] pb-24 pt-14">
           {/* Name + About */}
           <section id="home">
-            <h1 className="text-[56px] font-bold uppercase leading-none tracking-tight">Yuvraj Ruparel</h1>
+            <h1 className="font-display text-[64px] font-extrabold uppercase leading-[1.05] tracking-[0.01em]">Yuvraj Ruparel</h1>
             <div className="mt-8 space-y-5 text-[18px] leading-[1.6] text-foreground">
               {about.map((paragraph, i) => (
-                <p key={i}>
+                <p key={i} className="text-justify-body">
                   {paragraph.map((part, j) =>
                     part.viewKey ? (
-                      <Link key={j} to="/view/$key" params={{ key: part.viewKey }} className="text-link">
+                      <Link key={j} to="/view/$key" params={{ key: part.viewKey }} className="inline-link">
                         {part.text}
                       </Link>
                     ) : (
@@ -74,12 +74,12 @@ function Home() {
               ))}
             </div>
 
-            <div className="mt-8 grid max-w-[560px] grid-cols-2 gap-x-8 gap-y-3">
+            <div className="mt-8 flex items-center justify-between gap-6">
               {contacts.map((c) => {
                 const Icon = contactIcons[c.icon];
                 const inner = (
                   <>
-                    <Icon size={18} strokeWidth={1.75} className="shrink-0 text-muted-foreground" />
+                    <Icon size={28} strokeWidth={1.75} className="shrink-0 text-muted-foreground" />
                     <span className="text-link">{c.label}</span>
                   </>
                 );
@@ -115,12 +115,12 @@ function Home() {
           {/* Upcoming */}
           <section id="upcoming" className="mt-[72px]">
             <h2 className="section-heading">Upcoming</h2>
-            <div className="mt-6 space-y-3">
+            <div className="mt-6 grid grid-cols-3 gap-5">
               {upcoming.map((u) => (
-                <div key={u.title} className="tint-box px-5 py-4">
-                  <h3 className="text-[16px] font-bold">{u.title}</h3>
-                  <p className="mt-1 text-[15px] leading-relaxed text-foreground/85">{u.description}</p>
-                </div>
+                <article key={u.title} className="rounded-[12px] border border-border bg-card p-4">
+                  <h3 className="text-[16px] font-bold leading-snug">{u.title}</h3>
+                  <p className="mt-2 text-justify-body text-[14px] leading-[1.55] text-foreground/85">{u.description}</p>
+                </article>
               ))}
             </div>
           </section>
@@ -147,7 +147,7 @@ function Home() {
                         </div>
                         <span className="whitespace-nowrap text-[14px] text-muted-foreground">{x.date}</span>
                       </div>
-                      <div className="mt-3 text-[15px] leading-relaxed text-foreground/85">
+                      <div className="mt-3 text-justify-body text-[15px] leading-relaxed text-foreground/85">
                         {x.bullets && (
                           <ul className="list-disc space-y-1 pl-5">
                             {x.bullets.map((b) => (
@@ -182,7 +182,7 @@ function Home() {
               {awards.map((a) => (
                 <li key={`${a.name}-${a.date}`} className="flex items-baseline gap-3">
                   <span className="chip shrink-0 whitespace-nowrap">{a.name}</span>
-                  <span className="min-w-0 flex-1 text-[15px] font-semibold leading-snug">{a.description}</span>
+                  <span className="min-w-0 flex-1 text-justify-body text-[15px] font-semibold leading-snug">{a.description}</span>
                   <span className="shrink-0 pl-4 text-[14px] text-subtle">{a.date}</span>
                 </li>
               ))}
@@ -192,13 +192,20 @@ function Home() {
           {/* Skills */}
           <section id="skills" className="mt-[72px]">
             <h2 className="section-heading">Skills</h2>
-            <div className="mt-6 grid grid-cols-3 gap-4">
-              {skills.map((s) => (
-                <div key={s.title} className="tint-box h-full p-5">
-                  <h3 className="text-[16px] font-bold">{s.title}</h3>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {s.items.map((item) => (
-                      <span key={item} className="chip border border-tint-border bg-background">
+            <div className="mt-6 grid grid-cols-3 gap-6">
+              {skills.map((s, i) => (
+                <div key={s.title} className="skill-card flex h-full flex-col p-5">
+                  <div className="flex items-center justify-between font-mono text-[12px] uppercase tracking-[0.12em]">
+                    <span className="text-foreground">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-muted-foreground">{s.count}</span>
+                  </div>
+                  <h3 className="mt-3 font-display text-[30px] font-bold uppercase leading-[1.05] tracking-[0.01em]">
+                    {s.title}
+                  </h3>
+                  <div className="mt-4 border-t border-dashed border-subtle" />
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {s.items.map((item, j) => (
+                      <span key={item} className={j === 0 ? "skill-tag bg-skill-highlight" : "skill-tag bg-background"}>
                         {item}
                       </span>
                     ))}
@@ -210,8 +217,8 @@ function Home() {
 
           {/* Closing banner */}
           <section id="summer-2027" className="mt-[72px] border-t border-border py-20">
-            <h2 className="text-[40px] font-bold leading-tight tracking-tight">{closing.headline}</h2>
-            <p className="mt-3 text-[18px] text-muted-foreground">{closing.subtext}</p>
+            <h2 className="font-display text-[40px] font-bold uppercase leading-[1.05] tracking-[0.01em]">{closing.headline}</h2>
+            <p className="mt-3 text-justify-body text-[18px] text-muted-foreground">{closing.subtext}</p>
           </section>
         </div>
       </main>

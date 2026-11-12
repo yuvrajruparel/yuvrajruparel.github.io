@@ -10,6 +10,8 @@
 
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Semi Condensed", "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -46,6 +48,8 @@
   --color-tint-border: var(--tint-border);
   --color-subtle: var(--subtle);
   --color-placeholder: var(--placeholder);
+  --color-link: var(--link);
+  --color-skill-highlight: var(--skill-highlight);
   --color-backdrop: var(--backdrop);
   --color-viewer: var(--viewer);
   --color-viewer-bar: var(--viewer-bar);
@@ -82,6 +86,8 @@
   --tint-border: oklch(0.897 0.019 255.5);    /* #d5deea */
   --subtle: oklch(0.714 0.019 261.3);         /* #9ca3af */
   --placeholder: oklch(0.967 0.003 264.5);    /* #f3f4f6 */
+  --link: #2f4462;                            /* dark blue-gray link */
+  --skill-highlight: #dbe4f0;
   --backdrop: oklch(0.21 0.032 264.7 / 45%);
   --viewer: oklch(0.247 0.006 258.4);         /* #1f2124 */
   --viewer-bar: oklch(0.247 0.006 258.4);
@@ -145,9 +151,45 @@
 }
 
 @utility section-heading {
+  font-family: var(--font-display);
   font-size: 30px;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+}
+
+/* Justified body paragraphs; short last lines stay left */
+@utility text-justify-body {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+}
+
+/* Visible inline link in About Me */
+@utility inline-link {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Skills cards: the only place a hard offset shadow is allowed */
+@utility skill-card {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-foreground);
+  border-radius: 0;
+  box-shadow: 5px 5px 0 var(--color-foreground);
+}
+
+@utility skill-tag {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.4;
+  border: 1px solid var(--color-foreground);
+  border-radius: 0;
+  padding: 3px 8px;
   color: var(--color-foreground);
 }
