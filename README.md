@@ -1,24 +1,53 @@
-# E-Portfolio
+# Yuvraj Ruparel | Portfolio
 
-Implement exactly the screenshot and nothing else
+Personal portfolio website of Yuvraj Ruparel, a Mechanical Engineering undergraduate at Duke University interested in robotics, mechatronics and hardware.
 
-This project was built with [Lovable](https://lovable.dev).
+Live site: https://yuvrajruparel.github.io
 
-## Build with Lovable
+## What is on the site
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/078a6af6-4c80-469d-bcbf-891064b9fa3d).
+- About, contact links and a fixed sidebar that follows the page as you scroll
+- Technical projects (current and upcoming), each with dates, photos and links
+- Professional experience, awards and skills
+- An in-site viewer for reports, posters and PDFs, so documents open on the site instead of on GitHub
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Tech stack
 
-## Development
+- React 19 and TypeScript
+- TanStack Start and TanStack Router
+- Vite and Tailwind CSS
+- Built as a static single-page app and hosted on GitHub Pages
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Project structure
+
+```
+src/                 Pages, components and styles
+public/docs/         PDFs and posters shown in the document viewer
+public/photos/       Project and award photos
+public/logos/        Organization logos
+public/favicon.jpg   Site icon
+.github/workflows/   GitHub Pages deploy workflow
+```
+
+## Run locally
+
+You need Node.js 20 or newer and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+git clone https://github.com/yuvrajruparel/yuvrajruparel.github.io.git
+cd yuvrajruparel.github.io
+npm install
 npm run dev
 ```
+
+## Build
+
+```sh
+npm run build
+```
+
+The static site is written to `.output/public`.
+
+## Deployment
+
+Every push to `main` runs the GitHub Actions workflow in `.github/workflows/deploy.yml`. It installs dependencies, builds the site, and publishes `.output/public` to GitHub Pages.
