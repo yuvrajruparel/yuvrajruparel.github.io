@@ -21,13 +21,20 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - run: npm install
       - run: npm run build
+      - name: Prepare static files
+        run: |
+          cd .output/public
+          ls -la
+          if [ ! -f index.html ]; then cp _shell.html index.html; fi
+          cp index.html 404.html
+          touch .nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: .output/public
 
   deploy:
     needs: build
