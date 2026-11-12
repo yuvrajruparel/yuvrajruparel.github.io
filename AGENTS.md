@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- All portfolio text, links, awards, skills and the viewer document map live in `src/data/portfolio.ts`; components only render it, so content edits stay in one file.
+- Documents and photos are plain files in `public/docs`, `public/photos`, `public/logos`, referenced through the `asset()` helper; every image uses `FallbackImage` so a missing file shows a gray box instead of a broken icon.
+- Routing uses TanStack Router (`/` and `/view/$key`); the sidebar lives in the index route only so the viewer page has none. react-router/HashRouter is not available in this stack.
+- Desktop-only layout (html min-width 1100px); do not add responsive/mobile breakpoints.
