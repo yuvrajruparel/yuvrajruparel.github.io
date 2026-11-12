@@ -115,7 +115,7 @@ function Home() {
           {/* Upcoming */}
           <section id="upcoming" className="mt-[72px]">
             <h2 className="section-heading">Upcoming</h2>
-            <div className="mt-6 grid grid-cols-3 gap-5">
+            <div className="mt-6 flex flex-col gap-5">
               {upcoming.map((u) => (
                 <article key={u.title} className="rounded-[12px] border border-border bg-card p-4">
                   <h3 className="text-[16px] font-bold leading-snug">{u.title}</h3>
@@ -193,13 +193,9 @@ function Home() {
           <section id="skills" className="mt-[72px]">
             <h2 className="section-heading">Skills</h2>
             <div className="mt-6 grid grid-cols-3 gap-6">
-              {skills.map((s, i) => (
+              {skills.map((s) => (
                 <div key={s.title} className="skill-card flex h-full flex-col p-5">
-                  <div className="flex items-center justify-between font-mono text-[12px] uppercase tracking-[0.12em]">
-                    <span className="text-foreground">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="text-muted-foreground">{s.count}</span>
-                  </div>
-                  <h3 className="mt-3 font-display text-[30px] font-bold uppercase leading-[1.05] tracking-[0.01em]">
+                  <h3 className="font-display text-[30px] font-bold uppercase leading-[1.05] tracking-[0.01em]">
                     {s.title}
                   </h3>
                   <div className="mt-4 border-t border-dashed border-subtle" />

@@ -246,35 +246,30 @@ export const awards = [
 export const skills = [
   {
     title: "CAD and Manufacturing",
-    count: "6 tools",
     items: ["SolidWorks", "Autodesk Fusion", "Onshape", "CNC milling (QuickCAM Pro)", "FDM printing", "SLS printing"],
   },
   {
     title: "Simulation and Analysis",
-    count: "3 tools",
-    items: ["FEA and CFD (Ansys Discovery)", "MuJoCo", "Wind tunnel testing"],
+    items: ["MuJoCo", "FEA and CFD (Ansys Discovery)", "Wind tunnel testing"],
   },
   {
     title: "Electronics",
-    count: "6 tools",
     items: [
       "PCB design (KiCad)",
-      "I2C level shifting",
-      "Sensor integration (Bar30, DHT11)",
       "MCU and SBC (Arduino, ESP32, Raspberry Pi)",
       "IMU (MPU6050)",
       "Motor and ESC control",
+      "I2C level shifting",
+      "Sensor integration (Bar30, DHT11)",
     ],
   },
-  { title: "Programming", count: "4 skills", items: ["Python", "C++", "Reinforcement learning", "Git"] },
+  { title: "Programming", items: ["Python", "C++", "Reinforcement learning", "Git"] },
   {
     title: "Leadership",
-    count: "2 roles",
     items: ["Led F1 in Schools team (World Finals, Singapore)", "Student Council Member (ABWA)"],
   },
   {
     title: "Languages Spoken",
-    count: "6 languages",
     items: ["English", "Spanish", "Hindi", "Gujarati", "Marathi", "Kutchi"],
   },
 ];
@@ -282,7 +277,7 @@ export const skills = [
 export const closing = {
   headline: "Looking for Summer 2027 Internship",
   subtext:
-    "Available full time. Interested in design, manufacturing, mechatronics and hardware electronics roles.",
+    "Available full time. Interested in robotics, design, manufacturing, mechatronics and hardware electronics roles.",
 };
 
 export const f1Awards = [

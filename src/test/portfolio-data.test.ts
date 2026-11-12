@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { about, documents, experience, projects, awards, skills, upcoming } from "@/data/portfolio";
+import { about, closing, documents, experience, projects, awards, skills, upcoming } from "@/data/portfolio";
 
 describe("Portfolio content rules", () => {
   it("has exactly 6 project cards in the requested order", () => {
@@ -55,11 +55,31 @@ describe("Portfolio content rules", () => {
     });
   });
 
-  it("shows a skill count that matches the number of tags in each card", () => {
-    expect(skills.map((s) => s.count.toUpperCase())).toEqual([
-      "6 TOOLS", "3 TOOLS", "6 TOOLS", "4 SKILLS", "2 ROLES", "6 LANGUAGES",
+  it("orders Simulation and Analysis tags with MuJoCo first", () => {
+    expect(skills.find((s) => s.title === "Simulation and Analysis")?.items).toEqual([
+      "MuJoCo", "FEA and CFD (Ansys Discovery)", "Wind tunnel testing",
     ]);
-    for (const s of skills) expect(Number(s.count.split(" ")[0]), s.title).toBe(s.items.length);
+  });
+
+  it("orders Electronics tags as requested", () => {
+    expect(skills.find((s) => s.title === "Electronics")?.items).toEqual([
+      "PCB design (KiCad)",
+      "MCU and SBC (Arduino, ESP32, Raspberry Pi)",
+      "IMU (MPU6050)",
+      "Motor and ESC control",
+      "I2C level shifting",
+      "Sensor integration (Bar30, DHT11)",
+    ]);
+  });
+
+  it("lists robotics first in the closing banner roles", () => {
+    expect(closing.subtext).toBe(
+      "Available full time. Interested in robotics, design, manufacturing, mechatronics and hardware electronics roles.",
+    );
+  });
+
+  it("keeps Prowler above Spiderbot Mark II in Upcoming", () => {
+    expect(upcoming.map((u) => u.title)).toEqual(["Prowler", "Spiderbot Mark II"]);
   });
 
   it("keeps the two interest paragraphs no longer than the two academic ones", () => {
