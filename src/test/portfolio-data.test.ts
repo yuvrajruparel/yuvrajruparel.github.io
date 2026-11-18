@@ -87,4 +87,23 @@ describe("Portfolio content rules", () => {
     expect(about).toHaveLength(4);
     expect(len(about[2]!) + len(about[3]!)).toBeLessThanOrEqual(len(about[0]!) + len(about[1]!));
   });
+
+  it("uses the updated About wording", () => {
+    const text = (i: number) => about[i]!.map((x) => x.text).join("");
+    expect(text(0)).toContain("I'm Yuvraj Ruparel, studying Mechanical Engineering at Duke University (Class of 2029).");
+    expect(text(0)).not.toContain("sophomore");
+    expect(text(1)).toContain(
+      "I like building hardware that actually runs, from designing the parts to wiring the electronics and writing the code that controls them.",
+    );
+    expect(text(2)).toBe(
+      "Outside engineering, I play cricket, table tennis, basketball and squash, swim, and I like watching movies and listening to music.",
+    );
+  });
+
+  it("names the House Captain role in the Leadership tags", () => {
+    expect(skills.find((s) => s.title === "Leadership")?.items).toEqual([
+      "Led F1 in Schools team (World Finals, Singapore)",
+      "Student Council Member: House Captain (ABWA)",
+    ]);
+  });
 });

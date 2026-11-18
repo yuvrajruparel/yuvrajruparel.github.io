@@ -12,12 +12,12 @@ export function Modal({ open, onClose, title, children }: Props) {
         <Dialog.Overlay className="fixed inset-0 z-40 bg-backdrop data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
         <Dialog.Content
           aria-describedby={undefined}
-          className="fixed left-1/2 top-1/2 z-50 flex max-h-[85vh] w-[760px] max-w-[calc(100vw-48px)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-[12px] border border-border bg-background focus:outline-none"
+          className="fixed left-1/2 top-1/2 z-50 flex max-h-[85vh] w-[760px] max-w-[calc(100vw-32px)] lg:max-w-[calc(100vw-48px)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-[12px] border border-border bg-background focus:outline-none"
         >
           <div className="flex items-center justify-between border-b border-border px-6 py-4">
             <Dialog.Title className="text-[20px] font-bold">{title}</Dialog.Title>
             <Dialog.Close
-              className="rounded-[8px] p-1.5 text-muted-foreground transition-colors hover:bg-chip hover:text-foreground"
+              className="rounded-[8px] p-1.5 text-muted-foreground max-lg:-mr-2.5 max-lg:flex max-lg:h-11 max-lg:w-11 max-lg:items-center max-lg:justify-center transition-colors hover:bg-chip hover:text-foreground"
               aria-label="Close"
             >
               <X size={18} />

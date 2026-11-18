@@ -53,12 +53,12 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Sidebar active={active} onNavigate={jumpTo} />
 
-      <main className="ml-[300px] pl-14 pr-10">
-        <div className="max-w-[900px] pb-24 pt-14">
+      <main className="px-5 lg:ml-[300px] lg:pl-14 lg:pr-10">
+        <div className="max-w-[900px] pb-24 pt-20 lg:pt-14">
           {/* Name + About */}
           <section id="home">
-            <h1 className="font-display text-[64px] font-extrabold uppercase leading-[1.05] tracking-[0.01em]">Yuvraj Ruparel</h1>
-            <div className="mt-8 space-y-5 text-[18px] leading-[1.6] text-foreground">
+            <h1 className="font-display text-[36px] font-extrabold lg:text-[64px] uppercase leading-[1.05] tracking-[0.01em]">Yuvraj Ruparel</h1>
+            <div className="mt-8 space-y-5 text-[16px] leading-[1.6] text-foreground lg:text-[18px]">
               {about.map((paragraph, i) => (
                 <p key={i} className="text-justify-body">
                   {paragraph.map((part, j) =>
@@ -74,16 +74,16 @@ function Home() {
               ))}
             </div>
 
-            <div className="mt-8 flex items-center justify-between gap-6">
+            <div className="mt-8 grid grid-cols-2 gap-4 lg:flex lg:items-center lg:justify-between lg:gap-6">
               {contacts.map((c) => {
                 const Icon = contactIcons[c.icon];
                 const inner = (
                   <>
                     <Icon size={28} strokeWidth={1.75} className="shrink-0 text-muted-foreground" />
-                    <span className="text-link">{c.label}</span>
+                    <span className="text-link max-lg:min-w-0 max-lg:[overflow-wrap:anywhere]">{c.label}</span>
                   </>
                 );
-                const cls = "flex items-center gap-2.5 text-[16px] font-medium";
+                const cls = "flex items-center gap-2.5 text-[16px] font-medium max-lg:min-h-11 max-lg:min-w-0";
                 return c.viewKey ? (
                   <Link key={c.label} to="/view/$key" params={{ key: c.viewKey }} className={cls}>
                     {inner}
@@ -105,7 +105,7 @@ function Home() {
           {/* Technical Projects */}
           <section id="projects" className="mt-[72px]">
             <h2 className="section-heading">Technical Projects</h2>
-            <div className="mt-6 grid grid-cols-3 gap-5">
+            <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((p) => (
                 <ProjectCard key={p.title} project={p} onOpenModal={setModal} />
               ))}
@@ -140,7 +140,7 @@ function Home() {
                       />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-start justify-between gap-4">
+                      <div className="flex flex-col items-start gap-1 lg:flex-row lg:justify-between lg:gap-4">
                         <div>
                           <h3 className="text-[17px] font-bold leading-snug">{x.title}</h3>
                           <p className="text-[15px] text-muted-foreground">{x.org}</p>
@@ -178,12 +178,12 @@ function Home() {
           <section id="awards" className="mt-[72px]">
             <h2 className="section-heading">Awards</h2>
             <div className="mt-3 h-px w-full bg-border" />
-            <ul className="mt-4 space-y-3.5">
+            <ul className="mt-4 space-y-5 lg:space-y-3.5">
               {awards.map((a) => (
-                <li key={`${a.name}-${a.date}`} className="flex items-baseline gap-3">
+                <li key={`${a.name}-${a.date}`} className="flex flex-col items-start gap-1 lg:flex-row lg:items-baseline lg:gap-3">
                   <span className="chip shrink-0 whitespace-nowrap">{a.name}</span>
-                  <span className="min-w-0 flex-1 text-justify-body text-[15px] font-semibold leading-snug">{a.description}</span>
-                  <span className="shrink-0 pl-4 text-[14px] text-subtle">{a.date}</span>
+                  <span className="min-w-0 text-justify-body lg:flex-1 text-[15px] font-semibold leading-snug">{a.description}</span>
+                  <span className="shrink-0 text-[14px] text-subtle lg:pl-4">{a.date}</span>
                 </li>
               ))}
             </ul>
@@ -192,10 +192,10 @@ function Home() {
           {/* Skills */}
           <section id="skills" className="mt-[72px]">
             <h2 className="section-heading">Skills</h2>
-            <div className="mt-6 grid grid-cols-3 gap-6">
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {skills.map((s) => (
                 <div key={s.title} className="skill-card flex h-full flex-col p-5">
-                  <h3 className="font-display text-[30px] font-bold uppercase leading-[1.05] tracking-[0.01em]">
+                  <h3 className="font-display text-[24px] font-bold lg:text-[30px] uppercase leading-[1.05] tracking-[0.01em]">
                     {s.title}
                   </h3>
                   <div className="mt-4 border-t border-dashed border-subtle" />
@@ -212,9 +212,9 @@ function Home() {
           </section>
 
           {/* Closing banner */}
-          <section id="summer-2027" className="mt-[72px] border-t border-border py-20">
-            <h2 className="font-display text-[40px] font-bold uppercase leading-[1.05] tracking-[0.01em]">{closing.headline}</h2>
-            <p className="mt-3 text-justify-body text-[18px] text-muted-foreground">{closing.subtext}</p>
+          <section id="summer-2027" className="mt-[72px] border-t border-border py-12 text-center lg:py-20 lg:text-left">
+            <h2 className="font-display text-[28px] font-bold lg:text-[40px] uppercase leading-[1.05] tracking-[0.01em]">{closing.headline}</h2>
+            <p className="mt-3 text-justify-body text-[16px] text-muted-foreground lg:text-[18px]">{closing.subtext}</p>
           </section>
         </div>
       </main>

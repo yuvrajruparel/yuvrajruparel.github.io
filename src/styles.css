@@ -101,8 +101,10 @@
     border-color: var(--color-border);
   }
 
-  html {
-    min-width: 1100px;
+  @media (min-width: 1024px) {
+    html {
+      min-width: 1100px;
+    }
   }
 
   body {
@@ -113,7 +115,10 @@
   }
 
   section[id] {
-    scroll-margin-top: 32px;
+    scroll-margin-top: 72px;
+    @media (min-width: 1024px) {
+      scroll-margin-top: 32px;
+    }
   }
 }
 
@@ -152,7 +157,10 @@
 
 @utility section-heading {
   font-family: var(--font-display);
-  font-size: 40px;
+  font-size: 28px;
+  @media (min-width: 1024px) {
+    font-size: 40px;
+  }
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.01em;
@@ -160,11 +168,13 @@
   color: var(--color-foreground);
 }
 
-/* Justified body paragraphs; short last lines stay left */
+/* Justified body paragraphs at 1024px and up (short last lines stay left); left aligned on phone */
 @utility text-justify-body {
-  text-align: justify;
-  text-align-last: left;
-  hyphens: auto;
+  @media (min-width: 1024px) {
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+  }
 }
 
 /* Visible inline link in About Me */

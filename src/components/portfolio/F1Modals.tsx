@@ -11,7 +11,7 @@ function DocRow({ label, viewKey }: { label: string; viewKey: string }) {
     <Link
       to="/view/$key"
       params={{ key: viewKey }}
-      className="flex items-center gap-3 rounded-[8px] bg-chip px-3.5 py-2.5 text-[15px] font-medium transition-colors duration-150 hover:bg-pill"
+      className="flex items-center gap-3 rounded-[8px] bg-chip max-lg:min-h-11 px-3.5 py-2.5 text-[15px] font-medium transition-colors duration-150 hover:bg-pill"
     >
       <FileText size={18} strokeWidth={1.75} className="text-muted-foreground" />
       <span className="flex-1">{label}</span>
@@ -36,7 +36,7 @@ export function F1Modals({ open, onClose }: Props) {
             </div>
           ))}
         </div>
-        <div className="mt-6 grid grid-cols-2 items-start gap-3">
+        <div className="mt-6 grid grid-cols-1 items-start gap-3 sm:grid-cols-2">
           {f1Photos.map((src) => (
             <FallbackImage
               key={src}

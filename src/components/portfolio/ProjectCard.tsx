@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { asset, type Project } from "@/data/portfolio";
 import { FallbackImage } from "./FallbackImage";
 
-const chipClass = "chip whitespace-nowrap transition-colors duration-150 hover:bg-pill";
+const chipClass = "chip whitespace-nowrap transition-colors duration-150 hover:bg-pill max-lg:min-h-11";
 
 type Props = { project: Project; onOpenModal: (modal: "f1-photos" | "f1-docs") => void };
 

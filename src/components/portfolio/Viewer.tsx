@@ -37,24 +37,24 @@ export function Viewer({ docKey }: { docKey: string }) {
   };
 
   return (
-    <div className="flex h-screen flex-col bg-viewer text-viewer-foreground">
-      <header className="grid h-12 shrink-0 grid-cols-[1fr_auto_1fr] items-center border-b border-viewer-border bg-viewer-bar px-3">
+    <div className="flex h-screen flex-col bg-viewer max-lg:h-dvh text-viewer-foreground">
+      <header className="grid h-12 shrink-0 grid-cols-[1fr_auto_1fr] items-center max-lg:grid-cols-[auto_minmax(0,1fr)_auto] max-lg:gap-2 border-b border-viewer-border bg-viewer-bar px-3">
         <button
           type="button"
           onClick={goBack}
           aria-label="Back"
-          className="flex w-fit items-center gap-2 rounded-[8px] px-2 py-1.5 text-[14px] text-viewer-muted transition-colors hover:text-viewer-foreground"
+          className="flex w-fit items-center gap-2 rounded-[8px] px-2 py-1.5 max-lg:min-h-11 text-[14px] text-viewer-muted transition-colors hover:text-viewer-foreground"
         >
           <ArrowLeft size={18} />
           Back
         </button>
-        <h1 className="truncate text-[15px] font-semibold">{doc?.title ?? "Document"}</h1>
+        <h1 className="truncate text-[15px] font-semibold max-lg:text-center">{doc?.title ?? "Document"}</h1>
         <div className="flex justify-end">
           {doc && status === "ready" && (
             <a
               href={url}
               download
-              className="flex items-center gap-1.5 rounded-[8px] border border-viewer-border px-3 py-1 text-[13px] font-medium text-viewer-foreground transition-colors hover:bg-viewer-border"
+              className="flex items-center gap-1.5 rounded-[8px] border border-viewer-border px-3 py-1 max-lg:min-h-11 text-[13px] font-medium text-viewer-foreground transition-colors hover:bg-viewer-border"
             >
               <Download size={14} />
               Download

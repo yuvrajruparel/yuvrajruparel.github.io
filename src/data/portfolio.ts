@@ -15,17 +15,17 @@ export type TextPart = { text: string; viewKey?: string };
 export const about: TextPart[][] = [
   [
     {
-      text: "I'm Yuvraj Ruparel, a sophomore studying Mechanical Engineering at Duke University. I grew up in Mumbai, India, and I've always believed engineering should solve real problems people face, not just problems in textbooks.",
+      text: "I'm Yuvraj Ruparel, studying Mechanical Engineering at Duke University (Class of 2029). I grew up in Mumbai, India, and I've always believed engineering should solve real problems people face, not just problems in textbooks.",
     },
   ],
   [
     {
-      text: "I'm most interested in robotics and mechatronics, where mechanical design, electronics and software have to work together. I like building hardware that actually runs: designing the parts, wiring the electronics and writing the code that controls them. I am working on a few robotics and mechatronics related personal projects outside of classes.",
+      text: "I'm most interested in robotics and mechatronics, where mechanical design, electronics and software have to work together. I like building hardware that actually runs, from designing the parts to wiring the electronics and writing the code that controls them. I am working on a few robotics and mechatronics related personal projects outside of classes.",
     },
   ],
   [
     {
-      text: "Outside engineering, I play cricket, table tennis and basketball, I swim, and I like watching movies and listening to music.",
+      text: "Outside engineering, I play cricket, table tennis, basketball and squash, swim, and I like watching movies and listening to music.",
     },
   ],
   [
@@ -266,7 +266,7 @@ export const skills = [
   { title: "Programming", items: ["Python", "C++", "Reinforcement learning", "Git"] },
   {
     title: "Leadership",
-    items: ["Led F1 in Schools team (World Finals, Singapore)", "Student Council Member (ABWA)"],
+    items: ["Led F1 in Schools team (World Finals, Singapore)", "Student Council Member: House Captain (ABWA)"],
   },
   {
     title: "Languages Spoken",
