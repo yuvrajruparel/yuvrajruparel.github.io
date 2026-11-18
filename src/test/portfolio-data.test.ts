@@ -78,8 +78,8 @@ describe("Portfolio content rules", () => {
     );
   });
 
-  it("keeps Prowler above Spiderbot Mark II in Upcoming", () => {
-    expect(upcoming.map((u) => u.title)).toEqual(["Prowler", "Spiderbot Mark II"]);
+  it("keeps Prowler Mark I above Spiderbot Mark II in Upcoming", () => {
+    expect(upcoming.map((u) => u.title)).toEqual(["Prowler Mark I", "Spiderbot Mark II"]);
   });
 
   it("keeps the two interest paragraphs no longer than the two academic ones", () => {
@@ -93,10 +93,13 @@ describe("Portfolio content rules", () => {
     expect(text(0)).toContain("I'm Yuvraj Ruparel, studying Mechanical Engineering at Duke University (Class of 2029).");
     expect(text(0)).not.toContain("sophomore");
     expect(text(1)).toContain(
-      "I like building hardware that actually runs, from designing the parts to wiring the electronics and writing the code that controls them.",
+      "I like taking a build from start to finish, from designing the parts to wiring the electronics and writing the code that controls them.",
     );
     expect(text(2)).toBe(
-      "Outside engineering, I play cricket, table tennis, basketball and squash, swim, and I like watching movies and listening to music.",
+      "Outside engineering, I play cricket, table tennis, basketball, squash, and swim too. I also enjoy watching movies, binging sitcoms, and listening to music.",
+    );
+    expect(text(3)).toBe(
+      "One of my favorite hobbies is cubing. I'm a WCA (World Cube Association) certified speedcuber and can solve every listed WCA event, from 2x2 to 7x7 and the irregular shaped cubes. I've also solved a Gigaminx (5x5 Megaminx) and a 17x17 online in about 9,000 moves. I wrote a cubing guide (click to view) with the simplest method I know for each cube.",
     );
   });
 

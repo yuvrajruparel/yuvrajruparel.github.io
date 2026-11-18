@@ -20,22 +20,22 @@ export const about: TextPart[][] = [
   ],
   [
     {
-      text: "I'm most interested in robotics and mechatronics, where mechanical design, electronics and software have to work together. I like building hardware that actually runs, from designing the parts to wiring the electronics and writing the code that controls them. I am working on a few robotics and mechatronics related personal projects outside of classes.",
+      text: "I'm most interested in robotics and mechatronics, where mechanical design, electronics and software have to work together. I like taking a build from start to finish, from designing the parts to wiring the electronics and writing the code that controls them. I am working on a few robotics and mechatronics related personal projects outside of classes.",
     },
   ],
   [
     {
-      text: "Outside engineering, I play cricket, table tennis, basketball and squash, swim, and I like watching movies and listening to music.",
+      text: "Outside engineering, I play cricket, table tennis, basketball, squash, and swim too. I also enjoy watching movies, binging sitcoms, and listening to music.",
     },
   ],
   [
     {
-      text: "I'm a WCA (World Cube Association) certified speedcuber and can solve every listed WCA event, from 2x2x2 to 7x7x7 plus the Pyraminx, Megaminx, Square-1, Skewb and Clock. I've also solved a Gigaminx (5x5 Megaminx) and a ",
+      text: "One of my favorite hobbies is cubing. I'm a WCA (World Cube Association) certified speedcuber and can solve every listed WCA event, from 2x2 to 7x7 and the irregular shaped cubes. I've also solved a Gigaminx (5x5 Megaminx) and a ",
     },
-    { text: "17x17x17", viewKey: "cube-17x17x17" },
-    { text: " online (about 9,000 moves, since buying one costs too much). I wrote a " },
+    { text: "17x17", viewKey: "cube-17x17x17" },
+    { text: " online in about 9,000 moves. I wrote a " },
     { text: "cubing guide", viewKey: "cubing-guide" },
-    { text: " (click to view) with the simplest method I know for each puzzle." },
+    { text: " (click to view) with the simplest method I know for each cube." },
   ],
 ];
 
@@ -154,14 +154,14 @@ export const projects: Project[] = [
 
 export const upcoming = [
   {
-    title: "Prowler",
+    title: "Prowler Mark I",
     description:
       "A drone controlled from a phone app, built around a single custom PCB. It will use an MPU6050 IMU for stabilization, motor and ESC control, a live camera feed, and a 3D-printed PLA frame.",
   },
   {
     title: "Spiderbot Mark II",
     description:
-      "The next version of Spiderbot, where the legged robot learns to walk with a reinforcement learning gait instead of a hand-coded one.",
+      "The next version of Spiderbot, where the legged robot learns to walk with a reinforcement learning gait instead of a hand-coded one. We also plan to build a physical version of the robot.",
   },
 ];
 
